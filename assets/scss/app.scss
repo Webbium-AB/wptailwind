@@ -1,0 +1,72 @@
+@tailwind base;
+
+@tailwind components;
+
+/* purgecss start ignore */ 
+.w-content {
+    h1 {
+        @apply text-3xl mb-1 font-semibold;
+    }
+
+    h2 {
+        @apply text-2xl mb-1 font-semibold;
+    }
+
+    p {
+        @apply mb-3;
+    }
+
+    img {
+        @apply my-2;
+    }
+
+    ul {
+        @apply list-inside list-disc ml-3 mb-3;
+        li {
+            @apply mb-1;
+        }
+    }
+
+    blockquote {
+        @apply bg-gray-200 mt-4 p-6 rounded-md;
+    }
+
+    .post-categories {
+        @apply inline-flex list-none ml-0 mb-0;
+
+        li {
+            @apply mb-0;
+        }
+
+        a {
+            @apply text-blue-500;
+
+            &:hover {
+                @apply underline;
+            }
+        }
+    }    
+}
+
+.widget_search {
+    .screen-reader-text {
+        display: none;
+    }
+    
+    #searchsubmit {
+        display: none;
+    }
+
+    h2 {
+        @apply font-semibold text-xl;
+    }
+
+    input {
+        @apply my-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+    }
+}
+/* purgecss end ignore */
+
+
+
+@tailwind utilities;
