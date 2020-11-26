@@ -58,7 +58,7 @@ class WPTailwindWalkerNavMenu extends \Walker_Nav_Menu {
         $hasChildren = in_array('menu-item-has-children', $item->classes);
         
         // Build HTML.
-        $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class=" pr-3' . $depth_class_names . ' ' . $class_names.'"';
+        $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="pr-3 ' . $depth_class_names . ' ' . $class_names.'"';
         $inline = $depth == 0 ? 'inline-block' : '';
         if ($hasChildren ) {
             $output .= ' x-data="{ open: false }" @click.away="open = false"';
