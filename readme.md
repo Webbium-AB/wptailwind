@@ -1,6 +1,6 @@
 # Introduction #
 
-Minimalistic starter theme for WordPress based on TailwindCSS and AlpineJS. Uses Laravel Mix for asset compilation.
+Minimalistic starter theme for WordPress based on TailwindCSS and AlpineJS. Uses Laravel Mix for asset compilation. **Please note**, the compat version of TailwindCSS is used due to some incompatbility issues with Laravel Mix/Webpack and PostCSS 8.
 
 ## Theme installation ##
 
