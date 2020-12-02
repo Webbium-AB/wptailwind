@@ -11,12 +11,12 @@ get_header();
         $pageHeader = null;
         if (is_category()) {
             $categories = get_the_category();
-            $pageHeader = 'Visar kategori: '.esc_html($categories[0]->name);
+            $pageHeader = 'Category: '.esc_html($categories[0]->name);
             
         } 
 
         if (is_search()) {
-            $pageHeader = 'Visar sökresultat för: <span class="italic">'.esc_html($_GET['s']).'</span>';
+            $pageHeader = 'Search results for: <span class="italic">'.esc_html($_GET['s']).'</span>';
         }
         
         if (null !== $pageHeader) {
@@ -55,7 +55,7 @@ get_header();
                 ?>
                 <div class="bg-white shadow-md mx-2 lg:mx-0 mb-4">
                     <div class="p-4 w-content">
-                        <p>Hittar inga inlägg som motsvarar din fråga</p>
+                        <p>404 - Not found</p>
                     </div>
                 </div>
                 <?php
