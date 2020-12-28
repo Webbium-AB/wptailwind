@@ -15,16 +15,16 @@ $loader->addNamespace('WPTailwind', get_stylesheet_directory().'/app');
 require_once(__DIR__.'/vendor/autoload.php');
 
 /*
- * Restrict API access to whitelist IP(s), remove to enable WP API
+ * Restrict API access to whitelist IP(s) and logged in users
  */
-function restrictRestApiToLocalhost() {
-    $whitelist = [];
+function restrictRestApiAccess() {
+    $whitelist = ['127.0.0.1'];
 
-    if( ! in_array($_SERVER['REMOTE_ADDR'], $whitelist ) ){
+    if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist ) && !is_user_logged_in()) {
         die( 'REST API is disabled.' );
     }
 }
-add_action('rest_api_init', 'restrictRestApiToLocalhost', 0);
+add_action('rest_api_init', 'restrictRestApiAccess', 0);
 
 /*
  * Register widget area
@@ -97,8 +97,8 @@ function tailwindPagination( \WP_Query $wp_query = null, $echo = true ) {
 			'end_size'     => 3,
 			'mid_size'     => 1,
 			'prev_next'    => true,
-			'prev_text'    => __( '« Föregående' ),
-			'next_text'    => __( 'Nästa »' ),
+			'prev_text'    => __( '« Prev' ),
+			'next_text'    => __( 'Next »' ),
 			'add_args'     => false,
 			'add_fragment' => ''
 		]
