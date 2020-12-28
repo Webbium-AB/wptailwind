@@ -1,6 +1,4 @@
 {
     "require": {
-        "kitetail/zttp": "^0.6.0",
-        "nesbot/carbon": "^2.32"
     }
 }
